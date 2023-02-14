@@ -15,7 +15,9 @@
   <div class="flex h-full  dark:bg-gray-800 border-red-600 border-2">
 
     <div class="w-72 h-full dark:text-white  dark:bg-gray-800 z-40" >
-      <SideNavigation></SideNavigation>
+      <SideNavigation>
+
+      </SideNavigation>
     </div>
     <div class="flex flex-col w-full">
 

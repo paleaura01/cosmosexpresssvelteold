@@ -1,5 +1,4 @@
 <script>
-	import { open } from '../provider/store';
 	import SidenavItems from './sidenavitems.svelte';
 	import SidenavHeader from './sidenavheader.svelte';
 
@@ -12,12 +11,6 @@
 		container: `pb-32 lg:pb-6`,
 		open: `absolute w-8/12 z-40 sm:w-5/12`,
 		default: `bg-white shadow h-screen overflow-y-auto top-0 lg:block lg:relative lg:w-64 lg:z-auto`
-	};
-	const closeSidenav = () => {
-		//close sidenav on click outside when viewport is less than 1024px
-		if (window.innerWidth < 1024) {
-			$open = false;
-		}
 	};
 
 </script>
