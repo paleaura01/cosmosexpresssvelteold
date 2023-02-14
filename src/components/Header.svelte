@@ -1,6 +1,10 @@
 <script>
-    let name = 'Aaron';
-    let otherName = 'Josh';
+
   </script>
   
-  <header class='bg-blue-400 h-auto'><h1 class='text-2xl'>Header</h1></header>
+  <header class='bg-grey-400 dark:bg-slate-600 h-auto' class:dark={isDarkMode}>
+    <h1 class='text-2xl'>
+        Header
+    </h1>
+ 
+</header>

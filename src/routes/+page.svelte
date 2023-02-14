@@ -1,5 +1,5 @@
 <script>
-  import '../app.css';
+  import '../app.css'; 
 
   let isDarkMode = false;
   function toggleDarkMode() {
@@ -13,9 +13,6 @@
     <div class="flex flex-col w-full">
       <div class="h-24 w-full bg-gray-400 z-40 dark:bg-gray-800">
         Nav
-        <div class=" bg-gray-400 dark:bg-gray-800"  >
-          This div has a light background in light mode and a dark background in dark mode.
-        </div>
         <button on:click={toggleDarkMode}>Toggle Dark Mode</button>
       </div>
       <div class="h-full overflow-y-scroll flex justify-center dark:bg-slate-700">
