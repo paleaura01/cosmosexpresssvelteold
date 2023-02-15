@@ -45,9 +45,9 @@
         <div
           class="h-full overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
         >
-          <div class="h-full ml-5 mt-3 flex flex-col items-start">
+          <div class="h-full ml-10 mt-7 flex flex-col items-start">
             <div class="container">
-                <h1 class="mb-4 text-2xl font-bold">My Supporters</h1>
+                <h1 class="mb-4 text-2xl font-bold">Supporters</h1>
                 <div class="flex">
                   {#each supporters as supporter}
                     <p class="mr-3 mb-4">{supporter}</p>
