@@ -1,12 +1,16 @@
 
 <script>
   import '../app.css';
-  import Header from '../dashboard/topnavigation/topnav.svelte'
+  import {setContext} from 'svelte';
+  import Header from '../dashboard/topnavigation/topnav.svelte';
   import SideNavigation from '../dashboard/sidenavigation/sidenav.svelte';
   let isDm = true;
-  function tglDM() {
+
+  let tglDm = () => {
     isDm = !isDm;
-  }
+  };
+
+  setContext('tglDm', tglDm);
 </script>
 
 <div class="h-screen" class:dark={isDm}>
