@@ -3,7 +3,7 @@
     import {setContext} from 'svelte';
     import Header from '../../dashboard/topnavigation/topnav.svelte';
     import CosmosExpressLogo from '../../dashboard/sidenavigation/icons/CosmosExpressLogo.svelte';
-    import SideNavigation from '../../dashboard/sidenavigation/sidenav.svelte';
+
     let isDm = true;
   
     let tglDm = () => {

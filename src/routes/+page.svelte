@@ -1,10 +1,10 @@
 <script>
   import '../app.css';
-  import {menuStatus} from '../dashboard/data/store.js';
+  import {menuStatus} from '../dashboard/provider/store.js';
   import {setContext} from 'svelte';
   import Header from '../dashboard/topnavigation/topnav.svelte';
-  import CosmosExpressLogo from '../dashboard/sidenavigation/icons/CosmosExpressLogo.svelte';
   import SideNavigation from '../dashboard/sidenavigation/sidenav.svelte';
+  
   let isDm = true;
 
   let tglDm = () => {

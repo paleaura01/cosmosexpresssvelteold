@@ -1,5 +1,5 @@
 <script>
-  import {articles, menuOpened} from '../data/store.js';
+  import {articles, menuOpened} from '../provider/store.js';
   import {page} from '$app/stores';
   import {onMount} from 'svelte';
   import Collapse from './collapse/collapse.svelte';
