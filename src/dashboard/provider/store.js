@@ -4,3 +4,6 @@ let open = writable(false);
 
 export { open };
 
+let darkMode = writable(false);
+
+export { darkMode };

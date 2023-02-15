@@ -1,7 +1,7 @@
 <script>
-	import data from '../../dashboard/data/data';
+	import data from '../data/data';
 	import { page } from '$app/stores';
-	import Collapse from '././collapse/collapse.svelte';
+	import Collapse from './collapse/collapse.svelte';
 	const style = {
 		active: `font-normal mx-4 text-sm text-blue-600`,
 		inactive: `font-light mx-4 text-sm text-gray-900`,
