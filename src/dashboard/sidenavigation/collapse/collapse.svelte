@@ -9,7 +9,7 @@
 
 </script>
 
-<div role="button" on:click={toggle} on:keydown={toggle} tabindex="0" class="flex justify-start -mb-1 py-6 px-4 text-black text-sm">
+<div role="button" on:click={toggle} on:keydown={toggle} tabindex="0" class="flex justify-start -mb-1 py-6 px-4 text-sm">
 	<slot name="item" />
 	<span class="ml-auto">
 		<span hidden={!show}>
