@@ -4,7 +4,7 @@
 	import Collapse from './collapse/collapse.svelte';
 	const style = {
 		active: `font-normal mx-4 text-sm text-blue-600`,
-		inactive: `font-light mx-4 text-sm text-gray-900`,
+		inactive: `font-light mx-4 text-sm text-black dark:text-white`,
 		link: `inline-flex items-center justify-start mb-3 p-3 text-black`
 	};
 </script>
