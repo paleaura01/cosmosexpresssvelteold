@@ -1,12 +1,9 @@
 <script>
   import SidenavItems from './sidenavitems.svelte';
-  import SidenavHeader from './sidenavheader.svelte';
+  import CosmosExpressLogo from './icons/CosmosExpressLogo.svelte';
+ 
 
   const style = {
-    mobilePosition: {
-      left: 'left-0',
-      right: 'right-0',
-    },
     close: `hidden`,
     container: `pb-32 lg:pb-6`,
     open: `absolute w-8/12 z-40 sm:w-5/12`,
@@ -16,8 +13,8 @@
 
 <aside>
   <div class={style.container}>
-    <div class='z-50 fixed bg-white dark:bg-gray-800'><SidenavHeader /></div>
-    <div class='z-10 overflow-hidden py-72'><SidenavItems /></div>
+    <div class='z-50 pl-2 fixed bg-white dark:bg-slate-900'><CosmosExpressLogo /></div>
+    <div class='z-10 overflow-hidden pl-4 py-56'><SidenavItems /></div>
   </div>
 </aside>
 

@@ -1,10 +1,10 @@
-import DocumentsIcon from '../sidenavigation/icons/documentsicon.svelte';
+import MdiNewspaperVariantMultipleOutline from '../sidenavigation/icons/MdiNewspaperVariantMultipleOutline.svelte';
 
 
 const data = [
 	{
 		section: 'Documents',
-		icon: DocumentsIcon,
+		icon: MdiNewspaperVariantMultipleOutline,
 		content: [
 			{
 				title: 'Taxes',
@@ -22,7 +22,7 @@ const data = [
 	},
 	{
 		section: 'Messages',
-		icon: DocumentsIcon,
+		icon: MdiNewspaperVariantMultipleOutline,
 		content: [
 			{
 				title: 'Unbox',
@@ -40,7 +40,7 @@ const data = [
 	},
 	{
 		section: 'Pictures',
-		icon: DocumentsIcon,
+		icon: MdiNewspaperVariantMultipleOutline,
 		content: [
 			{
 				title: 'Vacations',
@@ -58,7 +58,7 @@ const data = [
 	},
 	{
 		section: 'Statistics',
-		icon: DocumentsIcon,
+		icon: MdiNewspaperVariantMultipleOutline,
 		content: [
 			{
 				title: 'Finances',
@@ -76,7 +76,7 @@ const data = [
 	},
 	{
 		section: 'Events',
-		icon: DocumentsIcon,
+		icon: MdiNewspaperVariantMultipleOutline,
 		content: [
 			{
 				title: 'Weddings',
@@ -90,7 +90,7 @@ const data = [
 	},
 	{
 		section: 'Guides',
-		icon: DocumentsIcon,
+		icon: MdiNewspaperVariantMultipleOutline,
 		content: [
 			{
 				title: 'Documentation',

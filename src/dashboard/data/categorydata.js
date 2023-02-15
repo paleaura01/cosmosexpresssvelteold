@@ -1,4 +1,6 @@
-import { FaRegNewspaper } from 'react-icons/fa';
+import MdiNewspaperVariantMultipleOutline from '../sidenavigation/icons/MdiNewspaperVariantMultipleOutline.svelte';
+
+
 
 const articlesData = {
 articles: [
@@ -6,7 +8,7 @@ articles: [
         id: 2,
         section: 'Article 2',
         date: 'Jan 01 2023 - Jan 15 2023',
-        icon: <FaRegNewspaper fontSize="x-large" className="mr-3"/>,
+        icon: MdiNewspaperVariantMultipleOutline,
         open: false,
         content: [
         {
@@ -60,7 +62,7 @@ articles: [
         id: 1,
         section: 'Article 1',
         date: 'Dct 15 - Dec 31, 2022',
-        icon: <FaRegNewspaper fontSize="x-large" className="mr-3 "/>,
+        icon: MdiNewspaperVariantMultipleOutline,
         open: false,
         content: [
         {
@@ -113,6 +115,4 @@ articles: [
 
 ],
 }
-
-const data = articlesData;
-export default data;
+export const {articles} = articlesData;

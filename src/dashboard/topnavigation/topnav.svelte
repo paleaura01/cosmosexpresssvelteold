@@ -1,28 +1,54 @@
 <script>
 	import { getContext } from 'svelte';
-	
+	import SubscribeButton from './subscribe.svelte';
+	import MidiCog from './icons/MidiCog.svelte'
+	import MdiInformationOutline from './icons/MdiInformationOutline.svelte'
+	import MdiWhiteBalanceSunny from './icons/MdiWhiteBalanceSunny.svelte'
+	import MdiMoonWaningCrescent from './icons/MdiMoonWaningCrescent.svelte'
 
+	let isDarkMode = false;
 	let tglDm = getContext('tglDm');
+
+	function toggleDarkMode() {
+		isDarkMode = !isDarkMode;
+		tglDm(isDarkMode);
+	}
 </script>
 
-<header class="h-16 md:h-20 dark:bg-gray-800 shadow bg-white items-center relative z-10">
-	<div class="flex flex-center flex-col h-full justify-center mx-auto relative px-3 text-white z-10">
-	<button class='dark:text-white text-black' on:click={tglDm}>Toggle Dark Mode</button>
-		<div class="flex items-center pl-1 relative w-full sm:ml-0 sm:pr-2 lg:max-w-68">
-			<div class="flex items-center justify-end ml-5 mr-0 p-1 relative text-gray-700 w-full sm:mr-0 sm:right-auto">
-				<a href="/" class="block pr-5">
-
+<header class="h-20 dark:bg-slate-900 shadow bg-white items-center relative z-40">
+	<div class="flex flex-center flex-col h-full justify-center  relative  text-white z-40">
+	
+		<div class=" relative w-full ">
+			
+			<div class="flex items-center justify-end relative text-gray-700 w-full ">
+				
+				<a href="/retweetpanel" class="mr-4 block dark:text-white text-gray-700">
+					<MidiCog />
 				</a>
-				<a href="/" class="block pr-5">
-
+				<div class="block pr-3  dark:text-white text-gray-700">
+					<button class='dark:text-white mt-1.5 text-gray-700' on:click={toggleDarkMode}>
+						{#if isDarkMode}
+						<div class=' text-yellow-500'>
+						<MdiWhiteBalanceSunny />
+						</div>
+					{:else}
+					<div>
+						<MdiMoonWaningCrescent />
+					</div>
+					{/if}
+				  </button>
+					  
+					
+				</div>
+				<a href="/info" class="block pr-5 dark:text-white text-gray-700 relative">
+					<MdiInformationOutline />
 				</a>
-				<a href="/" class="block pr-5 relative">
-
-				</a>
-				<a href="/" class="block relative">
-
-				</a>
+				<div class="block relative pr-5">
+					<SubscribeButton />
+				</div>
+				
 			</div>
+			
 		</div>
 	</div>
 </header>
