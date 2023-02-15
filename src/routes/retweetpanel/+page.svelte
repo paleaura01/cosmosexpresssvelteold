@@ -3,9 +3,15 @@
   import Header from '../../dashboard/topnavigation/topnav.svelte';
   import CosmosExpressLogo from '../../dashboard/sidenavigation/icons/CosmosExpressLogo.svelte';
 
+
   let isDm = true;
-  let tglDm = getContext('tglDm');
+  let tglDm = () => {
+    isDm = !isDm;
+  };
+
+  setContext('tglDm', tglDm);
   setContext('isDm', isDm);
+
 
   const categories = [
     'None',
@@ -34,7 +40,7 @@
 </script>
 
 <div class="h-screen overflow-y-hidden" class:dark={isDm}>
-  <div class="flex h-full">
+  <div class="flex h-full" class:dark={isDm}>
     <a href="/" class="w-72 h-full pl-2 dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide">
       <CosmosExpressLogo />
     </a>
@@ -45,9 +51,9 @@
       <div class="h-full overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white">
         <div class="h-full flex flex-row flex-wrap ml-28 mt-4 justify-center items-start">
           {#each boxes as box, index}
-            <div class="text-sm box p-2 w-1/2">
+            <div class="text-sm box  p-2 w-1/2">
               <input
-                class="pt-1 pb-1 pr-80 mt-3 text-sm bg-gray-100 border-2 border-slate-400 dark:bg-slate-900"
+                class="pt-1 pb-1 mr-1 pl-2 pr-80 mt-3 text-sm bg-gray-100 border-2 border-slate-400 dark:bg-slate-900"
                 type="text"
                 placeholder="https://twitter.com/...."
                 value={box.twitterLink}
