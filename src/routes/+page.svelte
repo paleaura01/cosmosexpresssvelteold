@@ -20,8 +20,7 @@
 
       <div class="h-20 w-full dark:text-white  z-40 dark:bg-gray-800">
         <Header />
-       
-        <button on:click={tglDM}>Toggle Dark Mode</button>
+      
       </div>
 
       <div class="h-full overflow-y-scroll flex justify-center bg-gray-100 dark:bg-slate-700">
