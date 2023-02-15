@@ -1,5 +1,6 @@
 import DocumentsIcon from '../sidenavigation/icons/documentsicon.svelte';
 
+
 const data = [
 	{
 		section: 'Documents',

@@ -1,9 +1,9 @@
 <script>
-
+	import { Skull } from 'lucide-svelte';
 	import { getContext } from 'svelte';
+	
 
 	let tglDm = getContext('tglDm');
-
 </script>
 
 <header class="h-16 md:h-20 dark:bg-gray-800 shadow bg-white items-center relative z-10">
@@ -15,23 +15,16 @@
 				
 				</a>
 				<a href="/" class="block pr-5">
-<<<<<<< HEAD
 					
-				</a>
-				<a href="/" class="block pr-5 relative">
-					
-				</a>
-				<a href="/" class="block relative">
-					
-=======
 					<!-- <Skull /> -->
 				</a>
 				<a href="/" class="block pr-5 relative">
+					
 					<!-- <Skull /> -->
 				</a>
 				<a href="/" class="block relative">
+					
 					<!-- <Skull /> -->
->>>>>>> e720c3dee25b2e6b78d788caa72531dd0298d5b2
 				</a>
 			</div>
 		</div>
