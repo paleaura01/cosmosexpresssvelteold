@@ -1,5 +1,5 @@
 <script>
-	import { Skull } from 'lucide-svelte';
+
 	import { getContext } from 'svelte';
 
 	let tglDm = getContext('tglDm');
@@ -12,16 +12,16 @@
 		<div class="flex items-center pl-1 relative w-full sm:ml-0 sm:pr-2 lg:max-w-68">
 			<div class="flex items-center justify-end ml-5 mr-0 p-1 relative text-gray-700 w-full sm:mr-0 sm:right-auto">
 				<a href="/" class="block pr-5">
-					<Skull />
+				
 				</a>
 				<a href="/" class="block pr-5">
-					<Skull />
+					
 				</a>
 				<a href="/" class="block pr-5 relative">
-					<Skull />
+					
 				</a>
 				<a href="/" class="block relative">
-					<Skull />
+					
 				</a>
 			</div>
 		</div>

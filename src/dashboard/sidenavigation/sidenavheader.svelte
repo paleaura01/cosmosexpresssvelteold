@@ -5,10 +5,10 @@
 
 <div>
   <svg
-    width="250"
-    height="250"
+    width="190"
+    height="190"
     viewBox="0 0 2990 2457"
-    class=""
+    class="m-6"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
