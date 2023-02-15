@@ -11,6 +11,7 @@
   };
 
   setContext('tglDm', tglDm);
+  setContext('isDm', isDm);
 </script>
 
 <div class="h-screen overflow-y-hidden" class:dark={isDm}>
