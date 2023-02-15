@@ -1,14 +1,18 @@
 <script>
 	import { open } from '../provider/store';
+	import {getContext} from 'svelte';
+	let tglDm = getContext('tglDm');
 	const toggle = () => {
 		$open = !$open;
 	};
 </script>
 
 <header class="h-16 md:h-20 dark:bg-gray-800 shadow bg-white items-center relative z-10">
+	
 	<div
 		class="flex flex-center flex-col h-full justify-center mx-auto relative px-3 text-white z-10"
 	>
+	<button on:click={tglDm}>Toggle Dark Mode</button>
 		<div class="flex items-center pl-1 relative w-full sm:ml-0 sm:pr-2 lg:max-w-68">
 			<div class="flex group h-full items-center relative w-12">
 				<button
