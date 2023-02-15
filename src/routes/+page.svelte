@@ -13,10 +13,10 @@
   setContext('tglDm', tglDm);
 </script>
 
-<div class="h-screen" class:dark={isDm}>
+<div class="h-screen overflow-y-hidden" class:dark={isDm}>
   <div class="flex h-full  dark:bg-gray-800 border-red-600 border-2">
 
-    <div class="w-72 h-full dark:text-white dark:bg-gray-800 z-40" >
+    <div class="w-72 h-full dark:text-white dark:bg-gray-800 z-40 overflow-y-auto" >
       <SideNavigation/>
     </div>
     <div class="flex flex-col w-full">
@@ -26,7 +26,7 @@
       
       </div>
 
-      <div class="h-full overflow-y-scroll flex justify-center bg-gray-100 dark:bg-slate-700">
+      <div class="h-full overflow-y-auto flex justify-center bg-gray-100 dark:bg-slate-700">
         
       </div>
 
