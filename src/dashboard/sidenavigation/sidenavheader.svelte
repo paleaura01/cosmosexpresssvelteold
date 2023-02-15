@@ -3,7 +3,7 @@
   let isDm = getContext('isDm');
 </script>
 
-<div>
+<div class='overflow-hidden'>
   <svg
     width="190"
     height="190"

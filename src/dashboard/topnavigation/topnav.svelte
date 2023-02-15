@@ -15,6 +15,7 @@
 				
 				</a>
 				<a href="/" class="block pr-5">
+<<<<<<< HEAD
 					
 				</a>
 				<a href="/" class="block pr-5 relative">
@@ -22,6 +23,15 @@
 				</a>
 				<a href="/" class="block relative">
 					
+=======
+					<!-- <Skull /> -->
+				</a>
+				<a href="/" class="block pr-5 relative">
+					<!-- <Skull /> -->
+				</a>
+				<a href="/" class="block relative">
+					<!-- <Skull /> -->
+>>>>>>> e720c3dee25b2e6b78d788caa72531dd0298d5b2
 				</a>
 			</div>
 		</div>
