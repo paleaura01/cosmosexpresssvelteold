@@ -15,13 +15,13 @@
 					<Skull />
 				</a>
 				<a href="/" class="block pr-5">
-					<Skull />
+					<!-- <Skull /> -->
 				</a>
 				<a href="/" class="block pr-5 relative">
-					<Skull />
+					<!-- <Skull /> -->
 				</a>
 				<a href="/" class="block relative">
-					<Skull />
+					<!-- <Skull /> -->
 				</a>
 			</div>
 		</div>
