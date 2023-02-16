@@ -40,7 +40,7 @@
 </script>
 
 <div class="h-screen overflow-y-hidden" class:dark={isDm}>
-  <div class="flex h-full" class:dark={isDm}>
+  <div class="flex h-full">
     <a href="/" class="w-72 h-full pl-2 dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide">
       <CosmosExpressLogo />
     </a>
