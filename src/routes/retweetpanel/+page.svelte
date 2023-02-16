@@ -45,7 +45,7 @@
         class="h-full overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
       >
         <div
-          class="h-full flex flex-row pr-1 flex-wrap ml-28 mt-4 justify-center items-start"
+          class="h-full pt-2 flex flex-row pr-1 flex-wrap ml-28 mt-4 justify-center items-start"
         >
           {#each boxes as box, index}
             <div class="text-sm box  p-2 w-1/2">
