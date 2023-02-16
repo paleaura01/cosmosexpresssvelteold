@@ -112,16 +112,20 @@ const articlesData = {
     },
   ],
 };
-export let menuStatus = writable({
-  menuOpened: false,
-});
-export const articles = writable(articlesData);
 
-export const menuOpened = writable((articleName) => {
-  if (menuStatus.menuOpened) {
-    menuStatus.menuOpened = false;
-  } else {
-    menuStatus.menuOpened = true;
-  }
-  return [articleName, menuStatus.menuOpened ? 'Open' : 'Closed'];
+export const darkModeSettings = writable({
+  isDm: false,
 });
+
+export const menuSettings = writable([
+  {
+    id: 'Article 1',
+    show: false,
+  },
+  {
+    id: 'Article 2',
+    show: false,
+  },
+]);
+
+export const articles = writable(articlesData);

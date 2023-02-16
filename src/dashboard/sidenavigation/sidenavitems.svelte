@@ -1,9 +1,15 @@
 <script>
-  import {articles, menuOpened} from '../provider/store.js';
+  import {articles} from '../provider/store.js';
   import {page} from '$app/stores';
-  import {onMount} from 'svelte';
+  import {getContext} from 'svelte';
   import Collapse from './collapse/collapse.svelte';
-  
+
+  let show = false;
+
+  const toggle = () => {
+    show = !show;
+  };
+
   const style = {
     active: `font-normal mx-4 text-sm text-blue-600`,
     inactive: `font-light mx-4 text-sm text-black dark:text-white`,
@@ -12,11 +18,8 @@
 </script>
 
 <ul class="mt-6 md:pl-6">
-  <li class='flex flex-col items-start'>
-	{#each $articles.articles as article, i}
-	<button class='text-xl' on:click={console.log($menuOpened(article.section))}>{article.section}</button>
-	{/each}
-    <!-- {#each articles.section as section, i}
+  <li class="flex flex-col items-start">
+    {#each $articles.articles as section, i}
       <Collapse>
         <div slot="item">
           <div class="flex">
@@ -28,7 +31,11 @@
           {#each section.content as item, i}
             <div class="pl-5">
               <a href={item.link} class={style.link}>
-                <span class={item.link === $page.url.pathname ? style.active : style.inactive}>
+                <span
+                  class={item.link === $page.url.pathname
+                    ? style.active
+                    : style.inactive}
+                >
                   {item.title}
                 </span>
               </a>
@@ -36,6 +43,6 @@
           {/each}
         </div>
       </Collapse>
-    {/each} -->
+    {/each}
   </li>
 </ul>
