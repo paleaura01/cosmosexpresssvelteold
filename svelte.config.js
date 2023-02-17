@@ -6,7 +6,7 @@ const config = {
   kit: {
     adapter: adapter(),
     paths: {
-      base: '/cosmosexpresssvelte',
+      base: '', // or '/'
       // assets: '/cosmosexpresssvelte/images',
     },
   },

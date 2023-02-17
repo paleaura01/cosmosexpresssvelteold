@@ -20,7 +20,8 @@
 <ul class="mt-6 md:pl-6">
   <li class="flex flex-col items-start">
     {#each $articles.articles as section, i}
-      <Collapse>
+      <!-- Pass index prop to Collapse component -->
+      <Collapse index={i}>
         <div slot="item">
           <div class="flex">
             <span><svelte:component this={section.icon} /></span>

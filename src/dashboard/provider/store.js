@@ -1,4 +1,12 @@
 import {writable} from 'svelte/store';
+import {persisted} from 'svelte-local-storage-store';
+
+// export const darkModeSettings = writable({
+//   isDm: false,
+// });
+export const darkModeSettings = persisted('darkModeSettings', {
+  isDm: false,
+});
 import MdiNewspaperVariantMultipleOutline from '../sidenavigation/icons/MdiNewspaperVariantMultipleOutline.svelte';
 const articlesData = {
   articles: [
@@ -112,10 +120,6 @@ const articlesData = {
     },
   ],
 };
-
-export const darkModeSettings = writable({
-  isDm: false,
-});
 
 export const menuSettings = writable([
   {
