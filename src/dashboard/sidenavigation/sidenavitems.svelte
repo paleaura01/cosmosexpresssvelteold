@@ -17,20 +17,20 @@
   };
 </script>
 
-<ul class="mt-6 md:pl-6">
-  <li class="flex flex-col items-start">
+<ul class="pl-6">
+  <li class="flex flex-col items-start ">
     {#each $articles.articles as section, i}
       <!-- Pass index prop to Collapse component -->
       <Collapse index={i}>
         <div slot="item">
-          <div class="flex">
+          <div class="flex pr-1 ">
             <span><svelte:component this={section.icon} /></span>
             <span class="pl-3">{section.section}</span>
           </div>
         </div>
         <div slot="panel">
           {#each section.content as item, i}
-            <div class="pl-5">
+            <div class="pr-5">
               <a href={item.link} class={style.link}>
                 <span
                   class={item.link === $page.url.pathname
