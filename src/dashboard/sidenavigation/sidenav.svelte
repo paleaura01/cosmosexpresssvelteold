@@ -13,7 +13,7 @@
 
 <aside>
   <div class={style.container}>
-    <div class='z-50 pr-1  fixed bg-white dark:bg-slate-900'><CosmosExpressLogo /></div>
+    <div class='z-50 pl-2  fixed bg-white dark:bg-slate-900'><CosmosExpressLogo /></div>
     <div class='z-10 overflow-hidden pl-4 py-56'><SidenavItems /></div>
   </div>
 </aside>

@@ -1,3 +1,5 @@
+const { localStorageStore } = require('svelte-local-storage-store');
+
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -25,5 +27,6 @@ module.exports = {
     require('tailwindcss'),
     require('tailwindcss-dark-mode')(),
     require('autoprefixer'),
+    
   ]
 };
