@@ -1,7 +1,7 @@
 <script>
-  import {darkModeSettings} from '../../dashboard/provider/store';
+  import {darkModeSettings, articles} from '../../dashboard/provider/store';
   import Header from '../../dashboard/topnavigation/topnav.svelte';
-  import CosmosExpressLogo from '../../dashboard/sidenavigation/icons/CosmosExpressLogo.svelte';
+  import CosmosExpressLogo from './icons/CosmosExpressLogo.svelte';
   const bearerToken =
     'BEARER_TOKEN "AAAAAAAAAAAAAAAAAAAAAIqCggEAAAAAMHeTVUBdvSWseqJF2pMy7gIkRTU%3DRC2igPi4uulWsf1vuX0pTV82fMevlvX3whRhJ1LsGu8vTXgsdf"';
 
@@ -73,7 +73,26 @@
       }
     }
 
-    console.log(categorizedData);
+    // Append the categorizedData object to the appropriate content object in the articles array
+    Object.keys(categorizedData).forEach((category) => {
+      const categoryIndex = categories.indexOf(category);
+      const contentItem = $articles.articles[0].content.find(
+        (item) => item.title === category
+      );
+      if (contentItem) {
+        contentItem.open = true;
+        contentItem.articles = categorizedData[category];
+      } else {
+        $articles.articles[0].content.splice(categoryIndex, 0, {
+          key: `A00${$articles.articles[0].content.length + 1}`,
+          title: category,
+          open: true,
+          articles: categorizedData[category],
+        });
+      }
+    });
+
+    console.log($articles);
   };
 </script>
 
@@ -81,23 +100,27 @@
   <div class="flex h-full">
     <a
       href="/"
-      class="w-72 h-full pl-2 dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide"
-    >
-      <CosmosExpressLogo />
+       class="w-1/6 hidden sm:hidden lg:block  h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide">
+      <div class="ml-10 mt-4 ">
+       <CosmosExpressLogo />
+      </div>
     </a>
     <div class="flex flex-col w-full">
-      <div class="h-20 w-full dark:text-white z-40 dark:bg-slate-900">
+      <div class="h-20  w-full dark:text-white z-40 dark:bg-slate-900">
         <Header />
       </div>
       <div
-        class="h-full overflow-y-auto flex justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+        class="h-full overflow-y-auto  flex justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
       >
-        <div class="w-full mt-10 flex justify-center">
-          <form on:submit={handleSubmit} class="w-4/5 flex flex-wrap">
+      
+        <div class="w-full  mt-10 flex justify-center">
+          
+          <form on:submit={handleSubmit} class="lg:w-4/5  flex flex-wrap">
             {#each boxes as box, index}
-              <div class="text-sm pl-5 pr-5 w-1/2">
+              <div class="text-sm pl-5 pr-5 md:w-3/4 mb-2 lg:w-1/2">
+                
                 <input
-                  class="pt-1 pb-1 box flex-grow pl-2 text-sm bg-gray-100 border-2 border-black dark:bg-slate-900 w-full"
+                  class="pt-1 pb-1 box flex-grow pl-2 text-sm bg-gray-100 border-2 border-black dark:bg-slate-900  w-full"
                   type="text"
                   bind:value={box.twitterLink}
                   on:change={() => (boxes[index] = box)}
@@ -115,12 +138,12 @@
                   {/each}
                 </select>
               </div>
+              
             {/each}
+                <button
+                class="bg-sky-500 ml-5 mt-3 lg:mt-0 mb-10 hover:bg-sky-700 text-white font-bold p-2 px-10 rounded-full"
+                >Submit</button>
             <div>
-              <button
-                class="bg-sky-500 ml-5 mb-10 hover:bg-sky-700 text-white font-bold p-2 px-10 rounded-full"
-                >Submit</button
-              >
             </div>
           </form>
         </div>

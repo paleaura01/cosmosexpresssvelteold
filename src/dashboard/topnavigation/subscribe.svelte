@@ -26,7 +26,7 @@
     };
   </script>
   
-  <button class="flex items-center px-4 mr-4 py-2 font-bold text-white bg-sky-500 hover:bg-sky-600 rounded-3xl text-md" on:click={() => (showPopout = true)}>
+  <button class="flex items-center px-4 lg:mr-2 py-2 font-bold text-white bg-sky-500 hover:bg-sky-600 rounded-3xl text-md" on:click={() => (showPopout = true)}>
     Subscribe
   </button>
   

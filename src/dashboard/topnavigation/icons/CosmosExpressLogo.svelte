@@ -1,27 +1,16 @@
 <script>
-  import {getContext} from 'svelte';
-  let isDm = getContext('isDm');
+  
+
 </script>
 
-<style>
-  @media (max-width: 640px) {
-.flex {
-  max-width: 90px;
-  position: static;
-  z-index: 50;
-}
-.z-50 {
-  z-index: 50;
-}
-}
-</style>
 
-<div class="flex">
-  <svg
-    width="190"
-    height="190"
+
+<div class="flex text-black dark:text-white">
+  <svg  
+    width="80"
+    height="80"
     viewBox="0 0 2990 2457"
-    class="z-50"
+    class=""
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

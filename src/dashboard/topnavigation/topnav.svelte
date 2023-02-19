@@ -5,6 +5,7 @@
   import MdiInformationOutline from './icons/MdiInformationOutline.svelte';
   import MdiWhiteBalanceSunny from './icons/MdiWhiteBalanceSunny.svelte';
   import MdiMoonWaningCrescent from './icons/MdiMoonWaningCrescent.svelte';
+  import CosmosExpressLogo from './icons/CosmosExpressLogo.svelte';
 
   
 	let tglDm = () => {
@@ -16,12 +17,14 @@
 </script>
 
 <header
-  class="h-20 dark:bg-slate-900 shadow bg-white items-center relative z-40"
+  class="h-20 dark:bg-slate-900 shadow bg-white items-center relative z-10"
 >
   <div
-    class="flex flex-center flex-col h-full justify-center  relative  text-white z-40"
-  >
+    class="flex flex-center flex-col h-full justify-center  relative  text-white z-10">
+    
+    <a href='/' class='ml-2 absolute z-50 lg:hidden dark:bg-slate-900'><CosmosExpressLogo /></a>
     <div class=" relative w-full ">
+      
       <div class="flex items-center justify-end relative text-gray-700 w-full ">
         <a
           href="/retweetpanel"

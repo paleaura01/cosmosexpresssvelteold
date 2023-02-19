@@ -3,9 +3,10 @@
   let isDm = getContext('isDm');
 </script>
 
-<style>
+<style >
   @media (max-width: 640px) {
 .flex {
+  
   max-width: 90px;
   position: static;
   z-index: 50;
@@ -17,7 +18,7 @@
 </style>
 
 <div class="flex">
-  <svg
+  <svg 
     width="190"
     height="190"
     viewBox="0 0 2990 2457"

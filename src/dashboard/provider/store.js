@@ -119,17 +119,21 @@ const articlesData = {
   ],
 };
 
-export const menuSettings = writable([
+const initialSettings = [
   {
     id: 'Article 2',
     show: false,
     icon: MdiNewspaperVariantMultipleOutline,
+    isActive: false,
   },
   {
     id: 'Article 1',
     show: false,
     icon: MdiNewspaperVariantMultipleOutline,
+    isActive: false,
   },
-]);
+];
+
+export const menuSettings = writable(initialSettings);
 
 export const articles = writable(articlesData);

@@ -23,7 +23,6 @@ app.get('/api/tweets/:tweetId', async (req, res) => {
     const data = response.data.data;
 
     res.status(200).json(data);
-    console.log(data);
   } catch (error) {
     console.error(error.message);
     return {

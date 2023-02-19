@@ -16,7 +16,7 @@
 }
 </style>
 
-<div class="flex">
+<div class="flex " >
   <svg
     width="190"
     height="190"

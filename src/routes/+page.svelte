@@ -19,9 +19,9 @@
 </script>
 
 <div class="h-screen overflow-y-hidden" class:dark={$darkModeSettings.isDm}>
-  <div class="flex h-full  ">
+  <div class="flex h-full">
     <div
-      class="w-72 h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide"
+      class="xl:w-1/6 hidden sm:hidden md:hidden lg:block sm:w-2/4 sm:pr-2 h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide"
     >
       <SideNavigation />
     </div>
@@ -33,7 +33,7 @@
       <div
         class="h-full overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
       >
-        <div class="h-full pl-12 py-8 flex flex-col items-start ">
+        <div class="h-full px-10 py-8 flex flex-col items-start ">
           <div class="text-1xl font-bold pl-7 py-3  py-3 px-7 mb-2.5 font-bold text-sm border-2 rounded-r-full rounded-tl-sm rounded-bl-full  border-black dark:border-white dark:text-white text-black">
             {#if $menuSettings[0].show && $menuSettings[0].id === 'Article 2'}
               <div class="flex">
@@ -49,6 +49,7 @@
               </div>
             {/if}
             </div>
+          <Grid />
           <div
             class="text-1xl font-bold pl-7 py-3 px-7 mb-2.5 font-bold text-sm border-2 rounded-r-full rounded-tl-sm rounded-bl-full  border-black dark:border-white dark:text-white text-black">
             {#if $menuSettings[1].show && $menuSettings[1].id === 'Article 1'}

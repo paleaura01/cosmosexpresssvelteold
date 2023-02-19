@@ -1,184 +1,79 @@
 <script>
+  import {articles} from '../dashboard/provider/store.js';
+  import {get} from 'svelte/store';
+  import MdiChevronDown from './icons/MdiChevronDown.svelte';
+  import MdiChevronRight from './icons/MdiChevronRight.svelte';
+
   const categories = [
-    ['Updates/Announcements', 'tweetbox'],
-    ['Partnerships/Integrations', 'tweetbox'],
-    ['Threads/Infographics', 'tweetbox'],
-    ['Technology/infrastructure', 'tweetbox'],
-    ['Validation', 'tweetbox'],
-    ['Governance', 'tweetbox'],
-    ['Security', 'tweetbox'],
-    ['Testnet Announcements', 'tweetbox'],
-    ['Airdrops', 'tweetbox'],
+    ['Updates/Announcements', 'tweetid'],
+    ['Partnerships/Integrations', 'tweetid'],
+    ['Threads/Infographics', 'tweetid'],
+    ['Technology/infrastructure', 'tweetid'],
+    ['Validation', 'tweetid'],
+    ['Governance', 'tweetid'],
+    ['Security', 'tweetid'],
+    ['Testnet Announcements', 'tweetid'],
+    ['Airdrops', 'tweetid'],
   ];
+  let dropdownOpen = Array(categories.length).fill(false);
 
-  
-    let dropdownOpen = false;
-    let column1Open = false;
-    let column2Open = false;
-    let column3Open = false;
-  
-    function toggleDropdown() {
-      dropdownOpen = !dropdownOpen;
-    }
-  
-    function toggleColumn1() {
-      column1Open = !column1Open;
-    }
-  
-    function toggleColumn2() {
-      column2Open = !column2Open;
-    }
-  
-    function toggleColumn3() {
-      column3Open = !column3Open;
-    }
+  const articlesValue = get(articles);
 
-    function toggleColumn4() {
-      column1Open = !column1Open;
-    }
-  
-    function toggleColumn5() {
-      column2Open = !column2Open;
-    }
-  
-    function toggleColumn6() {
-      column3Open = !column3Open;
+  function toggleDropdown(event, index) {
+    const dropdown = event.target
+      .closest('.dropdown-wrapper')
+      .querySelector('.dropdown-list');
+    dropdown.classList.toggle('hidden');
+    dropdownOpen[index] = !dropdownOpen[index];
+  }
+
+  // This function returns the articles for a given category from the articles object
+  function getArticlesByCategory(category) {
+    const articles = articlesValue.articles[0]?.content || [];
+    const categoryArticles =
+      articles.find((item) => item.title === category)?.articles || [];
+
+    if (categoryArticles.length > 0) {
+      console.log(`Category "${category}" has the following articles:`);
+      console.log(categoryArticles);
     }
 
-    function toggleColumn7() {
-      column1Open = !column1Open;
-    }
-  
-    function toggleColumn8() {
-      column2Open = !column2Open;
-    }
-  
-    function toggleColumn9() {
-      column3Open = !column3Open;
-    }
-  </script>
-  
-  <div class="relative">
-    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg" on:click={toggleDropdown}>
-      Open Dropdown
-    </button>
-    
-    {#if dropdownOpen}
-    <div class="grid grid-cols-3">
-      <div class=" top-12 right-0 z-10 w-80">
-          <div class="w-1/3">
-            <button class="flex-col sticky block text-white w-full px-4 py-2 text-gray-800" on:click={toggleColumn1}>
-              Column 1
-            </button>
-            
-            {#if column1Open}
-              <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-               <form class="block w-full h-96 px-4 py-2 text-gray-800">Tweetbox</form>
+    return categoryArticles;
+  }
+</script>
+
+<div class="container">
+  <div class="grid lg:grid-cols-3 grid-cols-1 gap-7 mb-8 mt-2">
+    {#each [0, 3, 6] as startIndex}
+      <div class="col-span-1 lg:mb-0 -mb-6">
+        {#each categories.slice(startIndex, startIndex + 3) as column, index}
+          <div class="dropdown-wrapper">
+            <button
+              type="button"
+              class="text-sm border-t border-b border-black dark:border-white border-l-0 border-r-0 pt-1 pb-1 mt-2 mb-4 w-full font-bold text-center"
+              on:click={(event) => toggleDropdown(event, startIndex + index)}
+            >
+              <div class="flex items-center justify-center">
+                {column[0]}
+                {#if dropdownOpen[startIndex + index]}
+                  <MdiChevronDown />
+                {:else}
+                  <MdiChevronRight />
+                {/if}
               </div>
-            {/if}
-          </div>
-          
-          <div class="w-1/3">
-            <button class="flex-col sticky text-white block w-full px-4 py-2 text-gray-800" on:click={toggleColumn2}>
-              Column 2
             </button>
-            
-            {#if column2Open}
-              <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-                <form class="block w-full h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-              </div>
-            {/if}
+
+            <div class="dropdown-list w-full mb-4 h-96 bg-white hidden">
+              {#each getArticlesByCategory(column[0]) as article}
+                <p class="block text-black">Author ID: {article.id}</p>
+                <p class="block text-black">Tweet ID: {article.id}</p>
+                <p class="block text-black">Text:{article.text}</p>
+                <p class="block text-black">Likes: {article.public_metrics.like_count}</p>
+              {/each}
+            </div>
           </div>
-          
-          <div class="w-1/3">
-            <button class="flex-col sticky text-white block w-full px-4 py-2 text-gray-800" on:click={toggleColumn3}>
-              Column 3
-            </button>
-            
-            {#if column3Open}
-              <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-                <form class="block w-full  h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-              </div>
-            {/if}
-          </div>
+        {/each}
       </div>
-
-      <div class=" top-12 right-0 z-10 w-80">
-        <div class="w-1/3">
-          <button class="flex-col sticky block text-white w-full px-4 py-2 text-gray-800" on:click={toggleColumn1}>
-            Column 1
-          </button>
-          
-          {#if column1Open}
-            <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-             <form class="block w-full h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-            </div>
-          {/if}
-        </div>
-        
-        <div class="w-1/3">
-          <button class="flex-col sticky text-white block w-full px-4 py-2 text-gray-800" on:click={toggleColumn2}>
-            Column 2
-          </button>
-          
-          {#if column2Open}
-            <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-              <form class="block w-full h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-            </div>
-          {/if}
-        </div>
-        
-        <div class="w-1/3">
-          <button class="flex-col sticky text-white block w-full px-4 py-2 text-gray-800" on:click={toggleColumn3}>
-            Column 3
-          </button>
-          
-          {#if column3Open}
-            <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-              <form class="block w-full  h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-            </div>
-          {/if}
-        </div>
-    </div>
-
-          <div class=" top-12 right-0 z-10 w-80">
-        <div class="w-1/3">
-          <button class="flex-col sticky block text-white w-full px-4 py-2 text-gray-800" on:click={toggleColumn1}>
-            Column 1
-          </button>
-          
-          {#if column1Open}
-            <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-             <form class="block w-full h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-            </div>
-          {/if}
-        </div>
-        
-        <div class="w-1/3">
-          <button class="flex-col sticky text-white block w-full px-4 py-2 text-gray-800" on:click={toggleColumn2}>
-            Column 2
-          </button>
-          
-          {#if column2Open}
-            <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-              <form class="block w-full h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-            </div>
-          {/if}
-        </div>
-        
-        <div class="w-1/3">
-          <button class="flex-col sticky text-white block w-full px-4 py-2 text-gray-800" on:click={toggleColumn3}>
-            Column 3
-          </button>
-          
-          {#if column3Open}
-            <div class="bg-white border border-gray-300 rounded-lg shadow-md mt-2">
-              <form class="block w-full  h-96 px-4 py-2 text-gray-800">Tweetbox</form>
-            </div>
-          {/if}
-        </div>
-    </div>
-</div>
-    {/if}
+    {/each}
   </div>
-  
+</div>
