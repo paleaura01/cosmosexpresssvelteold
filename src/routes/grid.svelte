@@ -33,11 +33,6 @@
     const categoryArticles =
       articles.find((item) => item.title === category)?.articles || [];
 
-    if (categoryArticles.length > 0) {
-      console.log(`Category "${category}" has the following articles:`);
-      console.log(categoryArticles);
-    }
-
     return categoryArticles;
   }
 </script>
@@ -65,10 +60,41 @@
 
             <div class="dropdown-list w-full mb-4 h-96 bg-white hidden">
               {#each getArticlesByCategory(column[0]) as article}
-                <p class="block text-black">Author ID: {article.id}</p>
-                <p class="block text-black">Tweet ID: {article.id}</p>
-                <p class="block text-black">Text:{article.text}</p>
-                <p class="block text-black">Likes: {article.public_metrics.like_count}</p>
+                <div class="bg-white dark:bg-gray-800 rounded-md shadow-md p-4">
+                  <div class="flex items-start">
+                    <img
+                      class="h-10 w-10 rounded-full mr-4"
+                      src={article.profile_image_url}
+                      alt="Profile image"
+                    />
+                    <div class="flex-grow">
+                      <div class="flex items-center">
+                        <h2 class="font-semibold mr-2">{article.name}</h2>
+                        <span class="text-gray-600">@{article.author_name}</span>
+                        <span class="text-gray-600 mx-2">•</span>
+                        <span class="text-gray-600">2h</span>
+                      </div>
+                      <p class="text-gray-900 dark:text-white mt-1">
+                       {article.text}
+                      </p>
+                      <div class="mt-2">
+                        <a
+                          href="#"
+                          class="text-blue-500 hover:text-blue-700 mr-4"
+                          >Reply</a
+                        >
+                        <a
+                          href="#"
+                          class="text-gray-600 hover:text-gray-800 mr-4"
+                          >Retweet</a
+                        >
+                        <a href="#" class="text-gray-600 hover:text-gray-800"
+                          >Like</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
               {/each}
             </div>
           </div>

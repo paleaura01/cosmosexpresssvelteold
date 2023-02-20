@@ -6,8 +6,6 @@ This issue may be caused by the fact that the page initially loads with the defa
 One way to avoid this issue is to hide the content until the darkModeSettings are fetched from local storage and applied. Here's an example of how you can do this:
 
 Add a CSS class to the body tag when darkModeSettings are being applied:
-html
-Copy code
 
 <!-- App.svelte -->
 

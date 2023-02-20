@@ -11,8 +11,8 @@ app.use(cors());
 
 app.get('/api/tweets/:tweetId', async (req, res) => {
   const tweetId = req.params.tweetId;
-  const apiUrl = `https://api.twitter.com/2/tweets/${tweetId}?tweet.fields=created_at,author_id,public_metrics&expansions=author_id&user.fields=created_at,public_metrics`;
-  // Your API logic here
+  const apiUrl = `https://api.twitter.com/2/tweets/${tweetId}?tweet.fields=created_at,author_id,public_metrics&expansions=author_id&user.fields=created_at,public_metrics,profile_image_url,username`;
+
   try {
     const response = await axios.get(apiUrl, {
       headers: {
@@ -21,8 +21,25 @@ app.get('/api/tweets/:tweetId', async (req, res) => {
     });
 
     const data = response.data.data;
+    const authorId = data.author_id;
+    const userNameUrl = `https://api.twitter.com/2/users/${authorId}?user.fields=username,profile_image_url`;
+    const userNameResponse = await axios.get(userNameUrl, {
+      headers: {
+        Authorization: `Bearer ${bearerToken}`,
+      },
+    });
 
-    res.status(200).json(data);
+    const userName = userNameResponse.data.data.username;
+    const name = userNameResponse.data.data.name;
+    const profileImageUrl = userNameResponse.data.data.profile_image_url;
+
+    const responseData = {
+      ...data,
+      author_name: userName,
+      name: name,
+      profile_image_url: profileImageUrl,
+    };
+    res.status(200).json(responseData);
   } catch (error) {
     console.error(error.message);
     return {

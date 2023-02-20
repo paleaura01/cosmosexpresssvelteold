@@ -35,7 +35,7 @@
       <div class="flex items-center justify-center h-full p-8 rounded-lg shadow-lg">
         <div class="relative flex flex-col p-12 bg-gray-100 bg-opacity-50 rounded-lg dark:bg-opacity-50 dark:bg-slate-900" on:click|stopPropagation>
           {#each platforms as platform (platform.link)}
-            <button class="w-64 p-4 m-4 font-bold text-gray-400 bg-gray-100 rounded-lg hover:bg-sky-500 hover:text-white" on:click={() => handleSubscribe(platform.link)} key={platform.link}>
+            <button class="w-40 md:w-64 lg:w-64 p-4 m-4 font-bold text-gray-400 bg-gray-100 rounded-lg hover:bg-sky-500 hover:text-white" on:click={() => handleSubscribe(platform.link)} key={platform.link}>
               {platform.name}
             </button>
           {/each}

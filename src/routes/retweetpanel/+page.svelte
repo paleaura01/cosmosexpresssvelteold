@@ -2,6 +2,7 @@
   import {darkModeSettings, articles} from '../../dashboard/provider/store';
   import Header from '../../dashboard/topnavigation/topnav.svelte';
   import CosmosExpressLogo from './icons/CosmosExpressLogo.svelte';
+  
   const bearerToken =
     'BEARER_TOKEN "AAAAAAAAAAAAAAAAAAAAAIqCggEAAAAAMHeTVUBdvSWseqJF2pMy7gIkRTU%3DRC2igPi4uulWsf1vuX0pTV82fMevlvX3whRhJ1LsGu8vTXgsdf"';
 
@@ -96,15 +97,17 @@
   };
 </script>
 
-<div class="h-screen overflow-y-hidden" class:dark={$darkModeSettings.isDm}>
+<div class="h-screen  overflow-y-hidden" class:dark={$darkModeSettings.isDm}>
   <div class="flex h-full">
-    <a
-      href="/"
-       class="w-1/6 hidden sm:hidden lg:block  h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide">
-      <div class="ml-10 mt-4 ">
-       <CosmosExpressLogo />
-      </div>
-    </a>
+
+    <div class="w-64  hidden sm:hidden md:hidden lg:block  h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide"> 
+  <a href="/" class="flex justify-center">
+  <div class="mt-4 ">
+   <CosmosExpressLogo />
+  </div>
+</a>
+  </div>
+
     <div class="flex flex-col w-full">
       <div class="h-20  w-full dark:text-white z-40 dark:bg-slate-900">
         <Header />
