@@ -14,6 +14,7 @@
   import MdiChevronRight from './icons/MdiChevronRight.svelte';
   import MdiNewspaperVariantMultipleOutline from './icons/MdiNewspaperVariantMultipleOutline.svelte';
 
+  
   let showGrid1 = false;
   let showGrid2 = false;
 
@@ -55,30 +56,26 @@
   });
 </script>
 
-<div class="h-screen  overflow-y-hidden" class:dark={$darkModeSettings.isDm}>
-  <div class="flex  h-full">
+<div class="h-screen  overflow-y-hidden "  class:dark={$darkModeSettings.isDm}>
+  <div class="flex  h-full" >
     <div
-      class="xl:w-1/6  hidden sm:hidden md:hidden lg:block  h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide"
+      class="w-64  hidden sm:hidden md:hidden lg:block  h-full dark:text-white dark:bg-slate-900  overflow-y-auto overflow-x-hidden scrollbar-hide"
     >
-      <div class="flex justify-center">
-        <a href="/" class="flex  justify-center">
-          <div class="mt-4 mb-4  ">
-            <CosmosExpressLogo />
-          </div>
-        </a>
-      </div>
+
+      <div class="justify-center relative">
       <SideNavigation />
+      </div>
     </div>
     <div class="flex flex-col w-full">
-      <div class="h-20 w-full dark:text-white  z-40 ">
+      <div class="dark:text-white   ">
         <Header />
       </div>
 
-      <div
-        class="h-full overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
-      >
-        <div class="h-full px-5  lg:px-10 py-8 flex flex-col items-start ">
-          <div
+      <div class="h-full pb-20 bg-gray-100 dark:bg-gray-800 flex-1" >
+      <div class="h-full  overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white">
+      
+        <div class="h-full px-5  lg:px-10 py-8 flex flex-col items-start " >
+          <div 
             class="text-1xl font-bold pl-7 py-3  py-3 px-7 mb-2.5 font-bold text-sm border-2 rounded-r-full rounded-tl-sm rounded-bl-full  border-black dark:border-white dark:text-white text-black"
           >
             {#if $menuSettings[0].show && $menuSettings[0].id === 'Article 2'}
@@ -122,4 +119,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

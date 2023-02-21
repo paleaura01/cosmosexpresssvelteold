@@ -17,12 +17,12 @@
 </script>
 
 <header
-  class="h-20 dark:bg-slate-900 shadow bg-white items-center relative z-10"
+  class=" dark:bg-slate-900 shadow bg-white items-center relative "
 >
   <div
-    class="flex flex-center flex-col h-full justify-center  relative  text-white z-10">
+    class="flex py-5 flex-center flex-col h-full justify-center  relative  text-white ">
     
-    <a href='/' class='ml-2 absolute z-50 lg:hidden dark:bg-slate-900'><CosmosExpressLogo /></a>
+    <a href='/' class='ml-2 absolute z-10 lg:hidden dark:bg-slate-900'><CosmosExpressLogo /></a>
     <div class=" relative w-full ">
       
       <div class="flex items-center justify-end relative text-gray-700 w-full ">

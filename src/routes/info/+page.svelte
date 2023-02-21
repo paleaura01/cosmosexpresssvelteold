@@ -23,7 +23,7 @@
       </div>
     
     <div class="flex flex-col w-full">
-      <div class="h-20 w-full dark:text-white  z-40 ">
+      <div class=" w-full dark:text-white  z-40 ">
         <Header />
       </div>
       <div class="h-full overflow-y-auto flex flex-col justify-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white">

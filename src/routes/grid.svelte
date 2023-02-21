@@ -1,8 +1,11 @@
 <script>
-  import {articles} from '../dashboard/provider/store.js';
-  import {get} from 'svelte/store';
+  
+  import { articles } from '../dashboard/provider/store.js';
+  import { get } from 'svelte/store';
   import MdiChevronDown from './icons/MdiChevronDown.svelte';
   import MdiChevronRight from './icons/MdiChevronRight.svelte';
+
+  
 
   const categories = [
     ['Updates/Announcements', 'tweetid'],
@@ -37,17 +40,16 @@
   }
 </script>
 
-<div class="container">
-  <div class="grid lg:grid-cols-3 grid-cols-1 gap-7 mb-8 mt-2">
+<div class="w-full flex-span ">
+  <div class="grid lg:grid-cols-3 grid-cols-1  gap-10 mb-16 lg:mb-7 ">
     {#each [0, 3, 6] as startIndex}
-      <div class="col-span-1 lg:mb-0 -mb-6">
+      <div class="col-span-1 lg:mb-0 -mb-10" >
         {#each categories.slice(startIndex, startIndex + 3) as column, index}
           <div class="dropdown-wrapper">
             <button
               type="button"
-              class="text-sm border-t border-b border-black dark:border-white border-l-0 border-r-0 pt-1 pb-1 mt-2 mb-4 w-full font-bold text-center"
-              on:click={(event) => toggleDropdown(event, startIndex + index)}
-            >
+              class="transition slide delay-150 text-sm border-t border-b border-black dark:border-white border-l-0 border-r-0 py-1 mt-4  w-full font-bold text-center"
+              on:click={(event) => toggleDropdown(event, startIndex + index)}>
               <div class="flex items-center justify-center">
                 {column[0]}
                 {#if dropdownOpen[startIndex + index]}
@@ -58,9 +60,10 @@
               </div>
             </button>
 
-            <div class="dropdown-list w-full mb-4 h-96 bg-white hidden">
-              {#each getArticlesByCategory(column[0]) as article}
-                <div class="bg-white dark:bg-gray-800 rounded-md shadow-md p-4">
+            <div class="dropdown-list border-t-0 rounded-br-md rounded-bl-md border-b border-black dark:border-white border-l border-r w-full dark:bg-slate-900 mb-4 h-37% md:h-47% lg:h-45%  mbg-white hidden">
+ 
+                {#each getArticlesByCategory(column[0]) as article}
+                <div class="bg-white dark:bg-slate-900  shadow-md ">
                   <div class="flex items-start">
                     <img
                       class="h-10 w-10 rounded-full mr-4"
@@ -75,7 +78,7 @@
                         <span class="text-gray-600">2h</span>
                       </div>
                       <p class="text-gray-900 dark:text-white mt-1">
-                       {article.text}
+                        {article.text}
                       </p>
                       <div class="mt-2">
                         <a

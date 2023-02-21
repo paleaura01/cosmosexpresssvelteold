@@ -100,16 +100,16 @@
 <div class="h-screen  overflow-y-hidden" class:dark={$darkModeSettings.isDm}>
   <div class="flex h-full">
 
-    <div class="w-64  hidden sm:hidden md:hidden lg:block  h-full dark:text-white dark:bg-slate-900 z-40 overflow-y-auto overflow-x-hidden scrollbar-hide"> 
+    <div class="w-64  hidden sm:hidden md:hidden lg:block  h-full dark:text-white dark:bg-slate-900  overflow-y-auto overflow-x-hidden scrollbar-hide"> 
   <a href="/" class="flex justify-center">
-  <div class="mt-4 ">
+  <div class="mt-4 z-50">
    <CosmosExpressLogo />
   </div>
 </a>
   </div>
 
     <div class="flex flex-col w-full">
-      <div class="h-20  w-full dark:text-white z-40 dark:bg-slate-900">
+      <div class=" w-full dark:text-white z-10 dark:bg-slate-900">
         <Header />
       </div>
       <div
