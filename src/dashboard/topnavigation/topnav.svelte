@@ -1,5 +1,5 @@
 <script>
-  import {darkModeSettings} from '../provider/store.js';
+  import { darkModeSettings } from '../provider/store.js';
   import SubscribeButton from './subscribe.svelte';
   import MidiCog from './icons/MidiCog.svelte';
   import MdiInformationOutline from './icons/MdiInformationOutline.svelte';

@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+/* SCROLLBARFX */
+
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -13,3 +15,107 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+/* For IE, Edge and Firefox */
+.scrollbar-thin {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #999 transparent; /* For Firefox */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* For IE and Edge */
+}
+
+
+/* DROPDOWNFX */
+
+/* Dropdown list fade effect for categories */
+@media (min-width: 768px) {
+    .dropdown-list {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .dropdown-list-open {
+      max-height: 890px; 
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .dropdown-list {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .dropdown-list-open {
+      max-height: 500px;
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .dropdown-list {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .dropdown-list-open {
+      max-height: 780px; 
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
+  }
+  
+  /* Dropdown list fade effect for article buttons */
+@media (min-width: 768px) {
+    .article-dropdown-wrapper {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .article-dropdown-wrapper-open {
+      max-height: 890px; 
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .article-dropdown-wrapper {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .article-dropdown-wrapper-open {
+      max-height: 500px;
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .article-wrapper {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    
+    .article-wrapper-open {
+      max-height: 780px; 
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
+  }
+  
+    

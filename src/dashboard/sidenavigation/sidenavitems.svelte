@@ -1,7 +1,7 @@
 <script>
-  import {articles} from '../provider/store.js';
-  import {page} from '$app/stores';
-  import {menuSettings} from '../provider/store.js';
+  import { articles } from '../provider/store.js';
+  import { page } from '$app/stores';
+  import { menuSettings } from '../provider/store.js';
   import MdiChevronDown from './icons/MdiChevronDown.svelte';
   import MdiChevronRight from './icons/MdiChevronRight.svelte';
   import CosmosExpressLogo from './icons/CosmosExpressLogo.svelte';
