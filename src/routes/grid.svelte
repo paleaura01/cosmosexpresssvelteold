@@ -22,6 +22,7 @@
 
   function toggleDropdown(event, index) {
     const dropdown = event.target
+      .closest('.dropdown-wrapper')
       .querySelector('.dropdown-list');
       dropdown.classList.toggle('dropdown-list-open');
     dropdownOpen[index] = !dropdownOpen[index];
@@ -29,14 +30,12 @@
 
   // This function returns the articles for a given category from the articles object
   function getArticlesByCategory(category) {
-  const articles = articlesValue.articles[0]?.content || [];
+    const articles = articlesValue.articles[0]?.content || [];
+    const categoryArticles =
+      articles.find((item) => item.title === category)?.articles || [];
 
-  const categoryArticles = articles.flatMap(item => item.articles)
-    .filter(article => article.category === category);
-
-  return categoryArticles;
-}
-
+    return categoryArticles;
+  }
 </script>
 
 
@@ -50,9 +49,7 @@
             <button
               type="button"
               class=" text-sm border-t border-b border-black dark:border-white border-l-0 border-r-0 py-1 mt-4 w-full font-bold text-center"
-              on:click={(event) => toggleDropdown(event, startIndex + index)
-              
-              }>
+              on:click={(event) => toggleDropdown(event, startIndex + index)}>
              
               <div class="flex items-center justify-center">
                 {column[0]}
@@ -68,7 +65,7 @@
             <div class="dropdown-list border-t-0 rounded-br-md rounded-bl-md border-b border-black dark:border-white border-l border-r w-full dark:bg-slate-900 mb-4 h-38% md:h-47% lg:h-43%  bg-white">
 
                 {#each getArticlesByCategory(column[0]) as article}
-                <div class="bg-white dark:bg-slate-900 shadow-md  ">
+                <div class="bg-white dark:bg-slate-900  shadow-md  ">
                   <div class="flex items-start ">
                     <img
                       class="h-10 w-10 rounded-full mr-4"
